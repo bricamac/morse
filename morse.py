@@ -31,7 +31,9 @@ def decode(message):
 
     morsedecoded=""
     for word in message.split():
-        if word in MORSE_CODE_DICT:
+        if word == "/":
+            morsedecoded += " "
+        elif word in MORSE_CODE_DICT:
                 morsedecoded += MORSE_CODE_DICT[word]
 
     return morsedecoded
